@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "x-playlist":"../../components/playlist/playlist"
+  },
+  "enablePullDownRefresh":true,
+  "onReachBottomDistance":100
+}
