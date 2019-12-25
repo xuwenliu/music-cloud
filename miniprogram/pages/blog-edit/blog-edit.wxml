@@ -1,0 +1,13 @@
+<view class="container">
+    <textarea bindinput="onInput" class="content" placeholder="分享你快乐的事..." maxlength="140"></textarea>
+    <view class="image-list">
+        <!-- 显示图片 -->
+        <view class="image-wrap selectphoto">
+            <i class="iconfont icon-jiahao"></i>
+        </view>
+    </view>
+</view>
+<view class="footer">
+    <text class="words-num">{{wordsNum}}</text>
+    <button size="mini" class="send-btn btn">发布</button>
+</view>

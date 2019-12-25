@@ -1,0 +1,6 @@
+<view hidden="{{!modalShow}}" class="modal">
+    <view class="panel">
+        <i class="iconfont icon-shanchu1" bind:tap="onClose"></i>
+        <slot name="auth-btn"></slot>
+    </view>
+</view>

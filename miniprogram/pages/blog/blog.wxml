@@ -1,2 +1,13 @@
-<!--miniprogram/pages/blog/blog.wxml-->
-<text>miniprogram/pages/blog/blog.wxml</text>
+<view class="container">
+    <!-- 头部 -->
+    <view class="header">
+        <view class="publish-container" bind:tap="onPublish">
+            <text class="iconfont icon-fabu"></text>
+        </view>
+        <view class="search-container">
+            <x-blog-search iconfont="iconfont" btn="btn" icon-sousuo="icon-sousuo" />
+        </view>
+    </view>
+    <!-- 底部弹出层 -->
+    <x-auth modalShow="{{modalShow}}" bind:authSuccess="authSuccess" bind:authFail="authFail"></x-auth>
+</view>

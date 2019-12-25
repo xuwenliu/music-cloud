@@ -4,7 +4,8 @@
         "pages/blog/blog",
         "pages/profile/profile",
         "pages/musiclist/musiclist",
-        "pages/player/player"
+        "pages/player/player",
+        "pages/blog-edit/blog-edit"
     ],
     "requiredBackgroundModes": [
         "audio"
@@ -23,15 +24,14 @@
             {
                 "pagePath": "pages/playlist/playlist",
                 "text": "音乐",
-                "iconPath":"images/music.png",
-                "selectedIconPath":"images/music-actived.png"
+                "iconPath": "images/music.png",
+                "selectedIconPath": "images/music-actived.png"
             },
             {
                 "pagePath": "pages/blog/blog",
                 "text": "发现",
                 "iconPath": "images/blog.png",
                 "selectedIconPath": "images/blog-actived.png"
-
             },
             {
                 "pagePath": "pages/profile/profile",

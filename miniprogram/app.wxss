@@ -1,1 +1,36 @@
 @import "iconfont.wxss";
+
+.btn {
+    position        : relative;
+    background-color: #d43c43;
+    box-shadow      : 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    z-index         : 1;
+    outline         : none;
+    overflow        : hidden;
+    transition      : color 0.4s ease-in-out;
+    font-weight     : normal;
+}
+
+.btn::before {
+    content         : '';
+    z-index         : -1;
+    position        : absolute;
+    top             : 50%;
+    left            : 50%;
+    width           : 1em;
+    height          : 1em;
+    border-radius   : 50%;
+    background-color: rgb(244, 67, 54);
+    transform-origin: center;
+    transform       : translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+    transition      : transform 0.45s ease-in-out;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color : #f5f5f5;
+}
+
+.btn:hover::before {
+    transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
