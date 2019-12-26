@@ -5,7 +5,8 @@
         "pages/profile/profile",
         "pages/musiclist/musiclist",
         "pages/player/player",
-        "pages/blog-edit/blog-edit"
+        "pages/blog-edit/blog-edit",
+        "pages/blog-comment/blog-comment"
     ],
     "requiredBackgroundModes": [
         "audio"
@@ -29,7 +30,7 @@
             },
             {
                 "pagePath": "pages/blog/blog",
-                "text": "发现",
+                "text": "动态",
                 "iconPath": "images/blog.png",
                 "selectedIconPath": "images/blog-actived.png"
             },

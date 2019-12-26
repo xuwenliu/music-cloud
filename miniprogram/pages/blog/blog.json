@@ -1,7 +1,10 @@
 {
     "usingComponents": {
         "x-blog-search": "../../components/blog-search/blog-search",
-        "x-auth": "../../components/auth/auth"
+        "x-auth": "../../components/auth/auth",
+        "x-blog-card": "../../components/blog-card/blog-card"
     },
-    "navigationBarTitleText": "发现"
+    "navigationBarTitleText": "动态",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 100
 }
