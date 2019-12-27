@@ -1,5 +1,5 @@
 <x-bottom-modal modalShow="{{modalShow}}">
-    <view slot="auth-btn">
+    <view slot="modal-content">
         <button open-type="getUserInfo" bind:getuserinfo="onGotUserInfo" size="mini" class="auth btn">
             获取微信授权信息
         </button>

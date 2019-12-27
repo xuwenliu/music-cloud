@@ -2,7 +2,8 @@
     "usingComponents": {
         "x-blog-search": "../../components/blog-search/blog-search",
         "x-auth": "../../components/auth/auth",
-        "x-blog-card": "../../components/blog-card/blog-card"
+        "x-blog-card": "../../components/blog-card/blog-card",
+        "x-blog-ctrl": "../../components/blog-ctrl/blog-ctrl"
     },
     "navigationBarTitleText": "动态",
     "enablePullDownRefresh": true,

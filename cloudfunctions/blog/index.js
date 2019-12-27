@@ -15,7 +15,19 @@ exports.main = async (event, context) => {
     app.router('list', async (ctx, next) => {
         const page = event.page || 1;
         const pageSize = event.pageSize || 10;
+        const keyword = event.keyword.trim();
+        let searchCondition = {} //查询条件
+        if (keyword !== '') {
+            searchCondition = {
+                content: db.RegExp({
+                    regexp: keyword,
+                    options: 'i'
+                })
+            }
+        }
+
         let res = await blogCol
+            .where(searchCondition)
             .skip((page - 1) * pageSize)
             .limit(pageSize)
             .orderBy('createTime', 'desc')

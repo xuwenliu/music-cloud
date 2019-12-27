@@ -5,7 +5,7 @@
             <text class="iconfont icon-fabu"></text>
         </view>
         <view class="search-container">
-            <x-blog-search iconfont="iconfont" btn="btn" icon-sousuo="icon-sousuo" />
+            <x-blog-search iconfont="iconfont" btn="btn" icon-search="icon-search" bind:search="onSearch" />
         </view>
     </view>
     <!-- 底部弹出层 -->
@@ -15,6 +15,7 @@
         <block wx:for="{{blogList}}" wx:key="_id">
             <view class="blog-panel">
                 <x-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goToComment" />
+                <x-blog-ctrl blogId="{{item._id}}" />
             </view>
         </block>
     </view>

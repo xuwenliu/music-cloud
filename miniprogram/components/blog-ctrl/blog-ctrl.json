@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "x-auth":"/components/auth/auth",
+        "x-bottom-modal":"/components/bottom-modal/bottom-modal"
+    }
+}

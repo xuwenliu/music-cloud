@@ -1,4 +1,4 @@
-// components/blog-search/blog-search.js
+let keyword = '';
 Component({
     /**
      * 组件的属性列表
@@ -9,7 +9,7 @@ Component({
             value: '请输入关键字'
         },
     },
-    externalClasses: ['iconfont', 'btn', 'icon-sousuo'],
+    externalClasses: ['iconfont', 'btn', 'icon-search'],
 
     /**
      * 组件的初始数据
@@ -22,6 +22,15 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+        onInput (event) {
+            keyword = event.detail.value
+        },
+        onSearch () {
+            if (keyword.trim() !== '') {
+                this.triggerEvent('search', {
+                    keyword
+                })
+            }
+        }
     }
 })

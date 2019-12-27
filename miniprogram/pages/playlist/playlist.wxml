@@ -11,5 +11,5 @@
     </block>
 </view>
 <view class="search-btn btn">
-    <text class="iconfont icon-sousuo search-text"></text>
+    <text class="iconfont icon-search search-text"></text>
 </view>

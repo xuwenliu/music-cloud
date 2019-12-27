@@ -13,8 +13,8 @@
     </view>
     <!-- 播放控制 -->
     <view class="control">
-        <text class="iconfont icon-shangyishoushangyige" bind:tap="onPrev"></text>
-        <text class="iconfont {{isPlaying?'icon-zanting1':'icon-bofang1'}}" bind:tap="togglePlay"></text>
-        <text class="iconfont icon-xiayigexiayishou" bind:tap="onNext"></text>
+        <text class="iconfont icon-shangyishou" bind:tap="onPrev"></text>
+        <text class="iconfont {{isPlaying?'icon-bofang2':'icon-bofang1'}}" bind:tap="togglePlay"></text>
+        <text class="iconfont icon-xiayishou" bind:tap="onNext"></text>
     </view>
 </view>

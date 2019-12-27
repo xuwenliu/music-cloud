@@ -1,0 +1,49 @@
+.ctrl {
+    display         : flex;
+    align-items     : center;
+    background-color: #fff;
+    height          : 100%;
+}
+
+.ctrl-item {
+    flex            : 1;
+    text-align      : center;
+    color           : rgba(40, 47, 60, 0.8);
+    font-size       : 26rpx;
+    height          : 80rpx;
+    display         : flex;
+    flex-direction  : row;
+    justify-content : center;
+    align-items     : center;
+    background-color: #fff;
+    box-shadow      : none;
+
+}
+
+.ctrl-item .icon {
+    margin-right: 12rpx;
+    font-size   : 32rpx;
+}
+
+.ctrl-item text {
+    font-size: 32rpx;
+}
+
+.modal-content {
+    padding: 70rpx 70rpx 0 30rpx;
+}
+
+.comment-content {
+    text-align  : left;
+    height      : 300rpx;
+    box-sizing  : border-box;
+    width       : 100%;
+    padding-left: 30rpx;
+}
+
+.send {
+    color    : #fff;
+    font-size: 24rpx;
+    float    : right;
+    margin   : 0 20rpx 20rpx 0;
+}

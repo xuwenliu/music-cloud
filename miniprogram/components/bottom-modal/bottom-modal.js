@@ -23,6 +23,7 @@ Component({
      */
     methods: {
         onClose () {
+            console.log(this.properties.modalShow)
             this.setData({
                 modalShow: false
             })

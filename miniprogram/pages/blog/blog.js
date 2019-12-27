@@ -2,6 +2,7 @@
 let page = 1;
 let pageSize = 10;
 let totalCount = 0;
+let keyword = '';// 动态搜索关键字
 
 Page({
 
@@ -77,7 +78,8 @@ Page({
             data: {
                 $url: "list",
                 page,
-                pageSize
+                pageSize,
+                keyword
             }
         })
         totalCount = res.result.totalCount;
@@ -94,6 +96,12 @@ Page({
         wx.navigateTo({
             url: `../blog-comment/blog-comment?blogId=${event.target.dataset.blogid}`,
         })
+    },
+
+    //动态模糊搜索
+    onSearch (event) {
+        keyword = event.detail.keyword;
+        this.onPullDownRefresh();
     }
 
 })

@@ -1,0 +1,20 @@
+<view class="ctrl">
+    <view class="ctrl-item btn" bind:tap="onComment">
+        <i class="iconfont icon-pinglun icon"></i>
+        <text>评论</text>
+    </view>
+    <view class="ctrl-item share btn" bind:tap="onShare">
+        <i class="iconfont icon-fenxiang-1 icon"></i>
+        <text>分享</text>
+    </view>
+</view>
+<x-auth modalShow="{{authModalShow}}" bind:authSuccess="authSuccess" bind:authFail="authFail" />
+<x-bottom-modal modalShow="{{commentModalShow}}">
+    <view class="modal-content" slot="modal-content">
+        <form report-submit="true" bind:submit="onSend">
+            <textarea fixed="{{true}}" name="content" class="comment-content" placeholder="写评论" value="{{content}}"></textarea>
+            <button size="mini" form-type="submit" class="send btn">评论</button>
+        </form>
+    </view>
+    >
+</x-bottom-modal>

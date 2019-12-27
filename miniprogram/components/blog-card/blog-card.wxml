@@ -8,7 +8,7 @@
     </view>
     <view class="blog-content">{{blog.content}}</view>
     <view class="blog-img">
-        <block wx:for="{{blog.images}}" wx:key="{{index}}">
+        <block wx:for="{{blog.images}}" wx:key="index">
             <image class="img" src="{{item}}" mode="aspectFill" data-current="{{item}}" data-images="{{blog.images}}" catch:tap="onPreviewImage"></image>
         </block>
     </view>
