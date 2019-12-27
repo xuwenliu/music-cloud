@@ -1,7 +1,17 @@
 <swiper indicator-dots="true" autoplay="true" circular="true">
     <block wx:for="{{swiper}}" wx:key="url">
         <swiper-item>
-            <image class="img" mode="widthFix" src="{{item.url}}"></image>
+            <van-image 
+                src="{{item.url}}"
+                width="100%"
+                height="100%"
+                data-current="{{item}}" 
+                data-images="{{blog.images}}" 
+                catch:tap="onPreviewImage"
+                lazy-load
+                use-loading-slot >
+					<van-loading slot="loading" type="spinner" size="20" vertical />
+				</van-image>
         </swiper-item>
     </block>
 </swiper>
@@ -11,5 +21,5 @@
     </block>
 </view>
 <view class="search-btn btn">
-    <text class="iconfont icon-search search-text"></text>
+    <van-icon name="search" size="60rpx" color="#fff"/>
 </view>

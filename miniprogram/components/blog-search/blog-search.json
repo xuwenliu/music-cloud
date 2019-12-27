@@ -1,4 +1,7 @@
 {
     "component": true,
-    "usingComponents": {}
+    "usingComponents": {
+        "van-button": "@vant/weapp/button",
+        "van-search": "@vant/weapp/search"
+    }
 }

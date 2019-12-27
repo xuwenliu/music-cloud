@@ -54,6 +54,7 @@ Page({
         app.setPlayingMusicId(musicId); //上一首，下一首的时候设置当前播放的musicId以提供歌单列表高亮显示
         wx.showLoading({
             title: '加载中...',
+            mask: true
         })
         let res = await wx.cloud.callFunction({
             name: 'music',

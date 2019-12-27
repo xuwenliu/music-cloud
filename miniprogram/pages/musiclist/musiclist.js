@@ -18,6 +18,7 @@ Page({
     onLoad: async function (options) {
         wx.showLoading({
             title: '加载中...',
+            mask: true
         })
         let res = await wx.cloud.callFunction({
             name: 'music',

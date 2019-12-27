@@ -27,18 +27,3 @@ page {
     font-size: 30rpx;
     color    : #474747;
 }
-
-.blog-img .img {
-    width        : 230rpx;
-    height       : 230rpx;
-    margin-right : 10rpx;
-    margin-bottom: 10rpx;
-}
-
-.blog-img .img:nth-child(3n) {
-    margin-right: 0;
-}
-
-.blog-nickName {
-    font-size: 32rpx;
-}

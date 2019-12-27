@@ -4,10 +4,21 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"nodeModules": true
 	},
 	"appid": "wx34627484a364af57",
 	"projectname": "music-cloud",
@@ -29,6 +40,10 @@
 			"list": []
 		},
 		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
@@ -66,6 +81,13 @@
 					"name": "blog-edit",
 					"pathName": "pages/blog-edit/blog-edit",
 					"query": "avatarUrl=\"https://wx.qlogo.cn/mmopen/vi_32/GibtPD7kNdbsaUjFpdZtNpx1Qlmibx0c2kFTfnB2op3icoXrHt62ULA1oI0tl0AQWnYLO26VyJurGHnLgGTY2icvDA/132&nickName=\"痕\"",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "blog-comment",
+					"pathName": "pages/blog-comment/blog-comment",
+					"query": "blogId=7799745c5e045137074a564519dfd866",
 					"scene": null
 				}
 			]

@@ -2,10 +2,10 @@
     <!-- 头部 -->
     <view class="header">
         <view class="publish-container" bind:tap="onPublish">
-            <text class="iconfont icon-fabu"></text>
+            <van-icon size="48rpx" name="edit" />
         </view>
         <view class="search-container">
-            <x-blog-search iconfont="iconfont" btn="btn" icon-search="icon-search" bind:search="onSearch" />
+            <x-blog-search iconfont="iconfont" btn="btn" icon-search="icon-search" icon-qingchu="icon-qingchu" bind:search="onSearch" />
         </view>
     </view>
     <!-- 底部弹出层 -->
@@ -15,7 +15,7 @@
         <block wx:for="{{blogList}}" wx:key="_id">
             <view class="blog-panel">
                 <x-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goToComment" />
-                <x-blog-ctrl blogId="{{item._id}}" />
+                <x-blog-ctrl blog="{{item}}" blogId="{{item._id}}" bounceBottomType="1"/>
             </view>
         </block>
     </view>

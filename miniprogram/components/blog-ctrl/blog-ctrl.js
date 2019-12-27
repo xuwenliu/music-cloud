@@ -1,6 +1,7 @@
 let userInfo = {};
 const db = wx.cloud.database();
 const commentCol = db.collection('blog-comment');
+const { filterDate } = require('../../utils/filter');
 
 Component({
     options: {
@@ -10,7 +11,12 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        blogId: String
+        blogId: String,
+        blog: Object,
+        bounceBottomType: {
+            type: Number,
+            value: 0, // 默认是0 - 不需要减去80, 1 需要减去80
+        }
     },
 
 
@@ -20,7 +26,9 @@ Component({
     data: {
         authModalShow: false, // 授权弹框是否显示
         commentModalShow: false, //评论弹框是否显示
-        content: ''
+        content: '',
+        bounceBottom: 0,//软键盘弹起的高度
+
     },
 
     /**
@@ -95,19 +103,8 @@ Component({
                 }
             }).then(res => {
 
-                // 推送模板消息 
-                wx.cloud.callFunction({
-                    name: 'sendMessage',
-                    data: {
-                        content,
-                        formId,
-                        commentNickName: userInfo.nickName,
-                        blogId: this.properties.blogId,
-                        createTime:db.serverDate()
-                    }
-                }).then((res) => {
-                    console.log(res)
-                })
+                //通知父元素评论成功了
+                this.triggerEvent('refreshCommentList');
 
                 wx.hideLoading();
                 wx.showToast({
@@ -117,8 +114,40 @@ Component({
                     commentModalShow: false,
                     content: '',
                 })
+
+                // 推送模板消息 
+                wx.cloud.callFunction({
+                    name: 'sendMessage',
+                    data: {
+                        content,
+                        formId,
+                        commentNickName: userInfo.nickName,
+                        blogId: this.properties.blogId,
+                        createTime: filterDate(new Date())
+                    }
+                }).then((res) => {
+                    console.log(res)
+                })
+
+
+
+
             })
 
-        }
+        },
+
+
+        onFocus(event) {
+            // 模拟器获取的高度为0
+            let bounceBottom = this.properties.bounceBottomType === 0 ? event.detail.height : event.detail.height - 80
+            this.setData({
+                bounceBottom
+            })
+        },
+        onBlur(event) {
+            this.setData({
+                bounceBottom: 0
+            })
+        },
     }
 })

@@ -1,7 +1,21 @@
 <view class="detail-container" style="background: url({{listInfo.coverImgUrl}}) no-repeat top/cover"></view>
 <view class="detail-mask"></view>
 <view class="detail-info">
-    <image class="detail-img" src="{{listInfo.coverImgUrl}}"></image>
+    <van-image 
+    class="detail-img"
+        src="{{listInfo.coverImgUrl}}"
+        width="280rpx"
+        height="280rpx"
+        radius="6rpx"
+        image-class="detail-img"
+        data-current="{{item}}" 
+        data-images="{{blog.images}}" 
+        catch:tap="onPreviewImage"
+        lazy-load
+        use-loading-slot >
+            <van-loading slot="loading" type="spinner" size="20" vertical />
+        </van-image>
+    <!-- <image class="detail-img" src="{{listInfo.coverImgUrl}}"></image> -->
     <view class="detail">
         <view class="detail-name">{{listInfo.name}}</view>
     </view>

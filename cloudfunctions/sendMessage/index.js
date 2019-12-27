@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
         OPENID
     } = cloud.getWXContext();
     try {
-        let result = await cloud.openapi.templateMessage.send({
+        let sendData = {
             touser: OPENID, // 通过 getWXContext 获取 OPENID
             page: `/pages/blog-comment/blog-comment?blogId=${event.blogId}`,
             templateId: "ihSHNc8_vUtqfd1L81fUJsiGGDatJdtSucj6XoEX1rQ",
@@ -26,7 +26,9 @@ exports.main = async (event, context) => {
                     value: event.createTime
                 }
             }
-        })
+        };
+        console.log('sendData',sendData);
+        let result = await cloud.openapi.templateMessage.send(sendData)
         console.log(result)
         return result
     } catch (err) {

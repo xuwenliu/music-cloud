@@ -3,7 +3,8 @@
         "x-blog-search": "../../components/blog-search/blog-search",
         "x-auth": "../../components/auth/auth",
         "x-blog-card": "../../components/blog-card/blog-card",
-        "x-blog-ctrl": "../../components/blog-ctrl/blog-ctrl"
+        "x-blog-ctrl": "../../components/blog-ctrl/blog-ctrl",
+        "van-icon":"@vant/weapp/icon"
     },
     "navigationBarTitleText": "动态",
     "enablePullDownRefresh": true,

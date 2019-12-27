@@ -5,6 +5,8 @@ cloud.init()
 const TcbRouter = require('tcb-router');
 const db = cloud.database();
 const blogCol = db.collection('blog');
+const blogCommentCol = db.collection('blog-comment');
+const MAX_LIMIT = 100;
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -39,6 +41,46 @@ exports.main = async (event, context) => {
             totalCount: totalCount.total,
             ...res
         }
+    })
+
+
+    app.router('detail', async (ctx, next) => {
+        let blogId = event.blogId;
+
+        //详情查询
+        let detail = await blogCol.doc(blogId).get().then(res => res.data);
+        //评论查询
+
+        let commentList = [];
+        //1.获取总共多少条数据
+        const countRes = await blogCol.count();
+        const total = countRes.total;
+
+        //2.计算出需要获取几次
+        if (total > 0) {
+            const batchTimes = Math.ceil(total / MAX_LIMIT);
+            //3.定义一个任务列表，循环执行该任务列表
+            const tasks = [];
+            for (let i = 0; i < batchTimes; i++) {
+                let promise = blogCommentCol.skip(i * MAX_LIMIT).limit(MAX_LIMIT).where({
+                    blogId
+                }).orderBy('createTime', 'desc').get();
+                tasks.push(promise);
+            }
+            if (tasks.length > 0) {
+                let allRes = (await Promise.all(tasks)).reduce((acc, cur) => {
+                    return {
+                        data: acc.data.concat(cur.data)
+                    }
+                })
+                commentList = allRes.data;
+            }
+        }
+        ctx.body = {
+            detail,
+            commentList
+        }
+        
     })
 
 

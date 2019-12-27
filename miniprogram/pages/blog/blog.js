@@ -10,12 +10,12 @@ Page({
         modalShow: false,//控制底部弹出层是否显示
         blogList: [],
     },
-    onLoad () {
+    onLoad() {
         this._getList();
     },
 
     //发布
-    onPublish () {
+    onPublish() {
         //1.判断用户是否授权
         wx.getSetting({
             success: (res) => {
@@ -36,13 +36,13 @@ Page({
         })
 
     },
-    authSuccess (event) {
+    authSuccess(event) {
         const userInfo = event.detail;
         wx.navigateTo({
             url: `../blog-edit/blog-edit?nickName=${userInfo.nickName}&avatarUrl=${userInfo.avatarUrl}`
         })
     },
-    authFail () {
+    authFail() {
         wx.showModal({
             title: '授权的用户才能发布',
             content: ''
@@ -51,7 +51,7 @@ Page({
     /**
       * 页面相关事件处理函数--监听用户下拉动作
       */
-    onPullDownRefresh () {
+    onPullDownRefresh() {
         page = 1;
         this.setData({
             blogList: []
@@ -62,16 +62,17 @@ Page({
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom () {
+    onReachBottom() {
         page++;
         if ((page - 1) * pageSize <= totalCount) {
             this._getList();
         }
     },
 
-    async _getList () {
+    async _getList() {
         wx.showLoading({
             title: '疯狂加载中',
+            mask: true
         })
         let res = await wx.cloud.callFunction({
             name: "blog",
@@ -92,16 +93,29 @@ Page({
         })
     },
 
-    goToComment (event) {
+    goToComment(event) {
         wx.navigateTo({
             url: `../blog-comment/blog-comment?blogId=${event.target.dataset.blogid}`,
         })
     },
 
     //动态模糊搜索
-    onSearch (event) {
+    onSearch(event) {
         keyword = event.detail.keyword;
         this.onPullDownRefresh();
+    },
+
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function (event) {
+        console.log(event)
+        let ds = event.target.dataset;
+        return {
+            title: ds.blog.content,
+            path: `/pages/blog-comment/blog-comment?blogId=${ds.blogid}`,
+            // imageUrl:''
+        }
     }
 
 })

@@ -1,6 +1,5 @@
 
 //音乐推荐列表
-
 let page = 1;
 let pageSize = 15;
 let totalCount = 0;
@@ -27,7 +26,7 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad (options) {
+    onLoad(options) {
         this._getList();
     },
 
@@ -54,9 +53,10 @@ Page({
         }
     },
 
-    async _getList () {
+    async _getList() {
         wx.showLoading({
             title: '加载中...',
+            mask: true
         })
         let res = await wx.cloud.callFunction({
             name: "music",

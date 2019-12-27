@@ -1,4 +1,4 @@
-<view hidden="{{!modalShow}}" class="modal">
+<view hidden="{{!modalShow}}" class="modal" style="bottom:{{bounceBottom}}px">
     <view class="panel">
         <i class="iconfont icon-shanchu" bind:tap="onClose"></i>
         <slot name="modal-content"></slot>
