@@ -14,17 +14,29 @@ App({
                 traceUser: true,
             })
         }
-
+        this.getOpenId();
         this.globalData = {
-            playingMusicId: -1
+            playingMusicId: -1,
+            openId: -1,
         }
 
 
     },
-    setPlayingMusicId (playingMusicId) {
+    setPlayingMusicId(playingMusicId) {
         this.globalData.playingMusicId = playingMusicId;
     },
-    getPlayingMusicId () {
+    getPlayingMusicId() {
         return this.globalData.playingMusicId;
+    },
+    async getOpenId() {
+        // 播放历史 使用openId 作为key存储在Storage里面
+        let res = await wx.cloud.callFunction({
+            name: 'login'
+        })
+        let openId = res.result.openid;
+        this.globalData.openId = openId;
+        if (!wx.getStorageSync(openId)) {
+            wx.setStorageSync(openId, []);
+        }
     }
 })

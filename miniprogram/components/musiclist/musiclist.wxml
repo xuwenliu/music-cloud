@@ -8,5 +8,8 @@
             </view>
             <view class="musiclist-singer">{{item.ar[0].name}} - {{item.al.name}}</view>
         </view>
+        <view class="musiclist-play">
+            <van-icon color="{{item.id === playingId?'#d43c43':'#888'}}" size="60rpx" name="play-circle-o" />
+        </view>
     </view>
 </block>

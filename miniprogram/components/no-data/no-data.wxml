@@ -1,0 +1,6 @@
+<view hidden="{{!show}}" class="no-data-box">
+	<view class="no-data">
+		<van-icon size="60px" color="#ccc" class="icon" name="{{icon}}" />
+		<view class="text">{{text}}</view>
+	</view>
+</view>

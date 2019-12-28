@@ -1,0 +1,16 @@
+.no-data-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-data{
+    text-align: center;
+    margin-top: 50%;
+}
+.no-data .icon{
+
+}
+.no-data .text{
+    font-size: 30rpx;
+    color: #ccc;
+}

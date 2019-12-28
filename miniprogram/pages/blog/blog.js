@@ -1,4 +1,4 @@
-// 发布
+// 动态
 let page = 1;
 let pageSize = 10;
 let totalCount = 0;

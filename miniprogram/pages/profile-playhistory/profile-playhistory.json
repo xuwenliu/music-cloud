@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "x-musiclist": "/components/musiclist/musiclist",
+    "x-no-data": "/components/no-data/no-data"
+  },
+  "navigationBarTitleText": "最近播放"
+
+}

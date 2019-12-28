@@ -26,6 +26,7 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"compileType": "miniprogram",
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -95,6 +96,13 @@
 					"name": "profile",
 					"pathName": "pages/profile/profile",
 					"query": "blogId=7799745c5e045137074a564519dfd866",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "profile-playhistory",
+					"pathName": "pages/profile-playhistory/profile-playhistory",
+					"query": "",
 					"scene": null
 				}
 			]

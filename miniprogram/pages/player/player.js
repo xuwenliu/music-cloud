@@ -29,7 +29,7 @@ Page({
         this._loadMusicDetail(options.musicId);
     },
 
-    async _loadMusicDetail (musicId) {
+    async _loadMusicDetail(musicId) {
         if (musicId === app.getPlayingMusicId()) {
             this.setData({
                 isSame: true
@@ -78,6 +78,9 @@ Page({
             backgroundAudioManager.coverImgUrl = music.al.picUrl;
             backgroundAudioManager.singer = music.ar[0].name;
             backgroundAudioManager.epname = music.al.name;
+
+            // 保存播放历史
+            this.savePlayHistory()
         }
 
         this.setData({
@@ -105,7 +108,7 @@ Page({
         console.log(lyricRes);
     },
 
-    togglePlay () {
+    togglePlay() {
         if (this.data.isPlaying) {
             backgroundAudioManager.pause();
         } else {
@@ -115,14 +118,14 @@ Page({
             isPlaying: !this.data.isPlaying
         })
     },
-    onPrev () {
+    onPrev() {
         nowPlayingIndex--;
         if (nowPlayingIndex < 0) {
             nowPlayingIndex = musicList.length - 1;
         }
         this._loadMusicDetail(musicList[nowPlayingIndex].id);
     },
-    onNext () {
+    onNext() {
         nowPlayingIndex++;
         if (nowPlayingIndex === musicList.length) {
             nowPlayingIndex = 0;
@@ -131,30 +134,53 @@ Page({
     },
 
     //切换歌词显示
-    onChangeLyricShow () {
+    onChangeLyricShow() {
         this.setData({
             isLyricShow: !this.data.isLyricShow
         })
     },
 
     //把进度条组件里面的当前播放时间传递到歌词组件
-    timeUpdate (event) {
+    timeUpdate(event) {
         // 通过.lyric class选取歌词组件，在歌词组件中定义一个叫update的方法，接受时间
         this.selectComponent('.lyric').update(event.detail.currentTime);
     },
 
 
     // 通过系统的播放和暂停控制我们自己的播放按钮以及动画
-    musicPlay () {
+    musicPlay() {
         this.setData({
             isPlaying: true
         })
     },
-    musicPause () {
+    musicPause() {
         this.setData({
             isPlaying: false
         })
     },
+
+    //保存播放历史
+    savePlayHistory() {
+        //当前正在播放的歌曲
+        const currentMusic = musicList[nowPlayingIndex];
+        const openId = app.globalData.openId;
+        let history = wx.getStorageSync(openId); // 取出Storage里面存储的歌曲
+        let bHave = false
+        for (let i = 0, len = history.length; i < len; i++) {
+            if (history[i].id == currentMusic.id) {
+                bHave = true
+                break
+            }
+        }
+        if (!bHave) {
+            history.unshift(currentMusic)
+            wx.setStorage({
+                key: openId,
+                data: history,
+            })
+        }
+
+    }
 
 
 })

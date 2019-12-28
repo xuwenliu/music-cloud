@@ -17,19 +17,28 @@ exports.main = async (event, context) => {
     app.router('list', async (ctx, next) => {
         const page = event.page || 1;
         const pageSize = event.pageSize || 10;
-        const keyword = event.keyword.trim();
-        let searchCondition = {} //查询条件
-        if (keyword !== '') {
-            searchCondition = {
+        const keyword = event.keyword;
+        const isMine = event.isMine || false;
+
+        //2种查询条件
+        let keywordCondition = {} //关键字查询条件
+
+        const wxContext = cloud.getWXContext()
+        let openIdCondition = { // 只查我的动态
+            _openid: wxContext.OPENID
+        }
+        if (keyword && keyword.trim() !== '') {
+            keywordCondition = {
                 content: db.RegExp({
                     regexp: keyword,
                     options: 'i'
                 })
             }
         }
+        let condition = isMine ? openIdCondition : keywordCondition;
 
         let res = await blogCol
-            .where(searchCondition)
+            .where(condition)
             .skip((page - 1) * pageSize)
             .limit(pageSize)
             .orderBy('createTime', 'desc')
@@ -80,7 +89,7 @@ exports.main = async (event, context) => {
             detail,
             commentList
         }
-        
+
     })
 
 

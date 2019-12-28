@@ -21,3 +21,6 @@
     </view>
 </view>
 
+<x-no-data icon="comment-o" text="暂无动态" show="{{blogList.length === 0}}" />
+
+

@@ -4,6 +4,7 @@
         "x-auth": "../../components/auth/auth",
         "x-blog-card": "../../components/blog-card/blog-card",
         "x-blog-ctrl": "../../components/blog-ctrl/blog-ctrl",
+        "x-no-data": "/components/no-data/no-data",
         "van-icon":"@vant/weapp/icon"
     },
     "navigationBarTitleText": "动态",

@@ -1,0 +1,2 @@
+<x-musiclist musiclist="{{playHistoryList}}" />
+<x-no-data text="暂无播放历史" show="{{playHistoryList.length === 0}}"/>
