@@ -3,8 +3,8 @@
       "x-playlist":"../../components/playlist/playlist",
       "van-icon":"@vant/weapp/icon",
       "van-image":"@vant/weapp/image",
-      "van-loading": "@vant/weapp/loading"
-  },
+      "van-loading": "@vant/weapp/loading"      
+ },
   "enablePullDownRefresh":true,
   "onReachBottomDistance":100
 }

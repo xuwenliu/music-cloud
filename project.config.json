@@ -89,6 +89,13 @@
 					"pathName": "pages/blog-comment/blog-comment",
 					"query": "blogId=7799745c5e045137074a564519dfd866",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "profile",
+					"pathName": "pages/profile/profile",
+					"query": "blogId=7799745c5e045137074a564519dfd866",
+					"scene": null
 				}
 			]
 		}

@@ -1,6 +1,7 @@
 .auth {
     font-size       : 32rpx;
     height          : 80rpx;
+    line-height     : 80rpx;
     color           : #fff;
     margin          : 110rpx;
     background-color: #d43c43;
