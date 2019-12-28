@@ -1,0 +1,29 @@
+.header {
+    display         : flex;
+    align-items     : center;
+    padding         : 0 20rpx;
+    background-color: #fff;
+    height          : 100rpx;
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    z-index         : 99;
+    box-sizing      : border-box;
+}
+.search-hot{
+    padding:130rpx 30rpx 30rpx;
+}
+.music-list{
+    padding-top: 130rpx;
+}
+.search-title{
+    color: #666;
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.hot-tag{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

@@ -20,7 +20,9 @@
         <x-playlist playlist="{{item}}"></x-playlist>
     </block>
 </view>
-<view class="search-btn btn">
+
+
+<view bind:tap="goToMusicSearch" class="search-btn btn">
     <van-icon name="search" size="60rpx" color="#fff"/>
 </view>
 

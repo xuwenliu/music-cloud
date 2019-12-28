@@ -44,7 +44,7 @@ Component({
         },
         goToMusicList(){
             wx.navigateTo({
-                url: `../../pages/musiclist/musiclist?playlistId=${this.properties.playlist.id}`,
+                url: `../../pages/music-list/music-list?playlistId=${this.properties.playlist.id}`,
             })
         }
     }

@@ -1,0 +1,26 @@
+<!-- 顶部搜索 -->
+<view class="header">
+	<x-blog-search placeholder="搜索歌曲、歌手、专辑" searchClass="music-search" bind:search="onInputSearch" bind:clear="onInputClear" bind:change="onInputChange" keywords="{{keywords}}" />
+</view>
+
+<!-- 热门搜索标签 -->
+<view hidden="{{isShowMusiclist}}" class="search-hot">
+	<view class="search-title">热门搜索</view>
+	<van-tag data-keyword="{{item.first}}" bind:tap="onTapSearch" wx:for="{{hotList}}" wx:key="index" custom-class="hot-tag" round plain color="{{item.color}}" size="large" type="warning">{{item.first}}</van-tag>
+</view>
+
+<!-- 搜索历史列表 -->
+<view hidden="{{isShowMusiclist}}">
+	<block wx:for="{{searchHistoryList}}" wx:key="index">
+		<van-cell data-keyword="{{item.keywords}}" bind:click="onTapSearch" icon="clock-o" title="{{item.keywords}}">
+			<van-icon data-keyword="{{item.keywords}}" bind:tap="delSearchHistory" slot="right-icon" name="cross" />
+		</van-cell>
+	</block>
+</view>
+
+
+<!-- 搜索结果 -->
+<view class="music-list">
+<x-musiclist musiclist="{{musiclist}}" />
+
+</view>

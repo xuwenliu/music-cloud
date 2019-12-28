@@ -1,5 +1,12 @@
 <view class="container">
-	<van-search value="{{keyword}}" placeholder="请输入搜索关键词" use-action-slot bind:change="onInput" bind:search="onSearch" bind:cancel="clearKeyword">
+	<van-search 
+	custom-class="{{searchClass}}" 
+	value="{{keyword}}" 
+	placeholder="{{placeholder}}" 
+	use-action-slot 
+	bind:change="onInput" 
+	bind:search="onSearch" 
+	bind:clear="clearKeyword">
 		<view slot="action" bind:tap="onSearch">搜索</view>
 	</van-search>
 </view>

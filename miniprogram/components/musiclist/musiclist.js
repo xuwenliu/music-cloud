@@ -34,7 +34,7 @@ Component({
                 playingId: ds.musicid
             }, () => {
                 wx.navigateTo({
-                    url: `../../pages/player/player?musicId=${ds.musicid}&index=${ds.index}`,
+                    url: `../../pages/music-player/music-player?musicId=${ds.musicid}&index=${ds.index}`,
                 })
             })
         }

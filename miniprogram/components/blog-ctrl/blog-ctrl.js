@@ -139,7 +139,7 @@ Component({
 
         onFocus(event) {
             // 模拟器获取的高度为0
-            let bounceBottom = this.properties.bounceBottomType === 0 ? event.detail.height : event.detail.height - 80
+            let bounceBottom = this.properties.bounceBottomType === 0 ? event.detail.height : event.detail.height - 82
             this.setData({
                 bounceBottom
             })

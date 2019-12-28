@@ -4,5 +4,6 @@
     "van-cell-group": "@vant/weapp/cell-group",
     "van-icon": "@vant/weapp/icon"
   },
-  "navigationBarTitleText": "我的"
+  "navigationBarTitleText": "我的",
+  "disableScroll": true
 }

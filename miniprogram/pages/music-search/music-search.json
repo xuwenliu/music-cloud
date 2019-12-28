@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "x-blog-search": "/components/blog-search/blog-search",
+    "x-musiclist":"/components/musiclist/musiclist",
+    "van-tag": "@vant/weapp/tag",
+    "van-cell": "@vant/weapp/cell",
+    "van-icon": "@vant/weapp/icon"
+  },
+  "navigationBarTitleText": "搜索"
+}

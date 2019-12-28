@@ -74,5 +74,11 @@ Page({
             wx.hideLoading();
             wx.stopPullDownRefresh();
         })
+    },
+
+    goToMusicSearch(){
+        wx.navigateTo({
+          url: '../../pages/music-search/music-search',
+        })
     }
 })

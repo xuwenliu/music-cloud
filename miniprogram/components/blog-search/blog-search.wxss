@@ -13,8 +13,12 @@
 }
 
 
-.van-search{
+.blog-search{
     width: 640rpx;
+    padding: 0;
+}
+.music-search{
+    width: 700rpx;
     padding: 0;
 }
 .van-search__action{

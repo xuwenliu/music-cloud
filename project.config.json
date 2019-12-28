@@ -48,25 +48,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
-				{
 					"id": 1,
-					"name": "musiclist",
-					"pathName": "pages/musiclist/musiclist",
+					"name": "pages/music-list/music-list",
+					"pathName": "pages/music-list/music-list",
 					"query": "playlistId=2723450345",
 					"scene": null
 				},
 				{
 					"id": 2,
-					"name": "player",
-					"pathName": "pages/player/player",
+					"name": "pages/music-player/music-player",
+					"pathName": "pages/music-player/music-player",
 					"query": "musicId=1345848098&index=9",
 					"scene": null
 				},
@@ -102,6 +96,13 @@
 					"id": -1,
 					"name": "profile-playhistory",
 					"pathName": "pages/profile-playhistory/profile-playhistory",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "music-search",
+					"pathName": "pages/music-search/music-search",
 					"query": "",
 					"scene": null
 				}

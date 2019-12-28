@@ -1,12 +1,13 @@
 {
     "pages": [
-        "pages/playlist/playlist",
+        "pages/music/music",
+        "pages/music-list/music-list",
+        "pages/music-player/music-player",
+        "pages/music-search/music-search",
         "pages/blog/blog",
-        "pages/profile/profile",
-        "pages/musiclist/musiclist",
-        "pages/player/player",
         "pages/blog-edit/blog-edit",
         "pages/blog-comment/blog-comment",
+        "pages/profile/profile",
         "pages/profile-playhistory/profile-playhistory",
         "pages/profile-bloghistory/profile-bloghistory"
     ],
@@ -25,7 +26,7 @@
         "selectedColor": "#d43c43",
         "list": [
             {
-                "pagePath": "pages/playlist/playlist",
+                "pagePath": "pages/music/music",
                 "text": "音乐",
                 "iconPath": "images/music.png",
                 "selectedIconPath": "images/music-actived.png"
