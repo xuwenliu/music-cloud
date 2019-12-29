@@ -1,7 +1,10 @@
 <x-bottom-modal modalShow="{{modalShow}}">
     <view slot="modal-content">
-        <button open-type="getUserInfo" bind:getuserinfo="onGotUserInfo" size="mini" class="auth btn">
-            获取微信授权信息
-        </button>
+        <van-button 
+        open-type="getUserInfo" 
+        bind:getuserinfo="onGotUserInfo" 
+        color="#d43c43"
+        round
+        custom-class="auth">同意微信授权</van-button>
     </view>
 </x-bottom-modal>

@@ -12,15 +12,26 @@
 <!-- 搜索历史列表 -->
 <view hidden="{{isShowMusiclist}}">
 	<block wx:for="{{searchHistoryList}}" wx:key="index">
-		<van-cell data-keyword="{{item.keywords}}" bind:click="onTapSearch" icon="clock-o" title="{{item.keywords}}">
-			<van-icon data-keyword="{{item.keywords}}" bind:tap="delSearchHistory" slot="right-icon" name="cross" />
-		</van-cell>
+
+		<van-swipe-cell left-width="{{60}}" right-width="{{0}}">
+			<van-cell  
+            title="{{item.keywords}}" 
+            data-keyword="{{item.keywords}}" 
+            bind:tap="onTapSearch" 
+        />
+			<view 
+                class="del-left" 
+                bind:tap="delSearchHistory"
+                data-keyword="{{item.keywords}}"  
+                slot="left">删除</view>
+		</van-swipe-cell>
+		
 	</block>
 </view>
 
 
 <!-- 搜索结果 -->
 <view class="music-list">
-<x-musiclist musiclist="{{musiclist}}" />
+	<x-musiclist musiclist="{{musiclist}}" />
 
 </view>

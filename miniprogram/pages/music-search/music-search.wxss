@@ -27,3 +27,13 @@
     margin-right: 10px;
     margin-bottom: 10px;
 }
+.del-left{
+    background-color: #d43c43;
+    width: 60px;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+}

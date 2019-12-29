@@ -4,7 +4,7 @@
     "x-musiclist":"/components/musiclist/musiclist",
     "van-tag": "@vant/weapp/tag",
     "van-cell": "@vant/weapp/cell",
-    "van-icon": "@vant/weapp/icon"
+    "van-swipe-cell":"@vant/weapp/swipe-cell"
   },
   "navigationBarTitleText": "搜索"
 }
