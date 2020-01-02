@@ -1,10 +1,4 @@
 {
     "component": true,
-    "usingComponents": {
-        "van-image": "@vant/weapp/image",
-        "van-loading": "@vant/weapp/loading",
-        "van-row":"@vant/weapp/row",
-        "van-col":"@vant/weapp/col"
-
-    }
+    "usingComponents": {}
 }

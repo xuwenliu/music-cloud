@@ -3,7 +3,7 @@
         {
             "name": "myGetPlaylist",
             "type": "timer",
-            "config": "0 0 8,12,20 * * * *"
+            "config": "0 0 8 * * * *"
         }
     ]
 }

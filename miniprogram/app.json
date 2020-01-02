@@ -46,5 +46,18 @@
         ]
     },
     "sitemapLocation": "sitemap.json",
-    "style": "v2"
+    "style": "v2",
+    "usingComponents":{
+        "x-no-data": "/components/no-data/no-data",
+        "van-button":"@vant/weapp/button",
+        "van-icon":"@vant/weapp/icon",
+        "van-image":"@vant/weapp/image",
+        "van-loading": "@vant/weapp/loading",
+        "van-tag": "@vant/weapp/tag",
+        "van-cell": "@vant/weapp/cell",
+        "van-swipe-cell":"@vant/weapp/swipe-cell",
+        "van-row":"@vant/weapp/row",
+        "van-col":"@vant/weapp/col",
+        "van-search": "@vant/weapp/search"
+    }
 }

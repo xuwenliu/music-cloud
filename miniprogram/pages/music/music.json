@@ -1,10 +1,7 @@
 {
   "usingComponents": {
-      "x-playlist":"/components/playlist/playlist",
-      "van-icon":"@vant/weapp/icon",
-      "van-image":"@vant/weapp/image",
-      "van-loading": "@vant/weapp/loading"      
- },
+    "x-playlist":"/components/playlist/playlist"
+  },
   "enablePullDownRefresh":true,
   "onReachBottomDistance":100
 }

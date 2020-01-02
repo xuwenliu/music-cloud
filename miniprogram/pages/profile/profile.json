@@ -1,9 +1,5 @@
 {
-  "usingComponents": {
-    "van-cell": "@vant/weapp/cell",
-    "van-cell-group": "@vant/weapp/cell-group",
-    "van-icon": "@vant/weapp/icon"
-  },
+  "usingComponents": {},
   "navigationBarTitleText": "我的",
   "disableScroll": true
 }

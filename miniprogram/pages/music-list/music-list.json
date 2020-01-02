@@ -1,7 +1,5 @@
 {
   "usingComponents": {
-      "x-musiclist":"/components/musiclist/musiclist",
-      "van-image":"@vant/weapp/image",
-      "van-loading": "@vant/weapp/loading"
+      "x-musiclist":"/components/musiclist/musiclist"
   }
 }
